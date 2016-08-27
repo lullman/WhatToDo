@@ -2,6 +2,39 @@
 
 <h2>Current User: <%= current_user %></h2>
 <h2>Current Session: <%= user_session %></h2>
+<h2>My Lists</h2>
+<p>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+    </tr>
+    <% @user.lists.each do |list| %>
+      <tr>
+        <td><%= list.list_name %></td>
+        <td><%= list.category %></td>
+      </tr>
+    <% end %>
+  </table>
+</p>
+
+<p>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Category</th>
+      <th>List Owner</th>
+    </tr>
+    <% @user.collaborations.each do |list| %>
+      <tr>
+        <td><%= list.list_name %></td>
+        <td><%= list.category %></td>
+        <td><%= list.user.email %></td>
+      </tr>
+    <% end %>
+  </table>
+</p>
+
 <p>
   <%= link_to "Log out", destroy_user_session_path, method: "delete" %>
 </p>
