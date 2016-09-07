@@ -1,0 +1,7 @@
+<h1><%= @list.list_name %></h1>
+
+<ul>
+  <% @list.experiences.each do |exp| %>
+    <li><%= exp.name %></li>
+  <% end %>
+</ul>

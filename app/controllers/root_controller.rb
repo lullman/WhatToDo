@@ -7,6 +7,6 @@ class RootController < ApplicationController
     puts "Current User: #{current_user}"
     puts "Current Session: #{user_session}"
     puts "*" * 50
-
+    @user = current_user
   end
 end
