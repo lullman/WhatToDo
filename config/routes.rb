@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'root#index'
+  # root 
   resources :users do
     resources :lists
     resources :collaborations

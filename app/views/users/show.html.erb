@@ -1,5 +1,5 @@
 <h1>Welcome!</h1>
-<h2>Root Index</h2>
+
 <h2>Current User: <%= current_user %></h2>
 <h2>Current Session: <%= user_session %></h2>
 <h2>My Lists</h2>
@@ -11,7 +11,7 @@
     </tr>
     <% @user.lists.each do |list| %>
       <tr>
-        <td><%= list.list_name %></td>
+        <td><%= link_to list.list_name, user_list_path(user_id: @user.id, id: list.id) %></td>
         <td><%= list.category %></td>
       </tr>
     <% end %>
